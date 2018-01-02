@@ -7,11 +7,14 @@ class Container extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            num:Math.random()*100
+            //num:Math.random()*100
+            num:0
         }
     }
     propsChange=()=>{
-        this.setState({num:Math.random()*100})
+        const num=this.state.num
+        this.setState({num:num+1})
+        //this.setState({num:Math.random()*100})
     }
 
     setLifeCycleState=()=>{
