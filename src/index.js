@@ -1,9 +1,7 @@
 import React from 'react'
-import {render} from 'react-dom'
+import ReactDOM from 'react-dom'
 import Container from './components/Container'
-
-
-render(
-  <Container/>,
-  document.getElementById('root')
-);
+ReactDOM.render(
+<Container/>,
+document.querySelector('#root')
+)

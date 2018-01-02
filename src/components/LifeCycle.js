@@ -1,63 +1,53 @@
 import React from 'react'
-class LifeCycle extends React.Component {
-    constructor(props) {
-        super(props);
-        alert("Initial render");
-        alert("constructor");
-        this.state = {str: "hello"};
+class LifeCycle extends React.Component{
+    constructor(props){
+        super(props)
+        alert('实例化最初的加载')
+        alert('constructor')
+        this.state={str:'hello'}
     }
-  
-    componentWillMount() {
-        alert("componentWillMount");
+    componentWillMount=()=>{
+        alert('componentWillMount')
     }
-  
-    componentDidMount() {
-        alert("componentDidMount");
+    componentDidMount=()=>{
+        alert('componentDidMount')
     }
-  
-    componentWillReceiveProps(nextProps) {
-        alert("componentWillReceiveProps");
+    componentWillReceiveProps=()=>{
+        alert('componentWillReceiveProps')
     }
-  
-    shouldComponentUpdate() {
-        alert("shouldComponentUpdate");
-        return true;        // 记得要返回true
+    shouldComponentUpdate=()=>{
+        alert('shouldComponentUpdate')
+        return true
     }
-  
-    componentWillUpdate() {
-        alert("componentWillUpdate");
+    componentWillUpdate=()=>{
+        alert('componentWillUpdate')
     }
-  
-    componentDidUpdate() {
-        alert("componentDidUpdate");
+    componentDidUpdate=()=>{
+        alert('componentDidUpdate')
     }
-  
-    componentWillUnmount() {
-        alert("componentWillUnmount");
+    componentWillUnmount=()=>{
+        alert('componentWillUnmount')
     }
-  
-    setTheState() {
-        let s = "hello";
-        if (this.state.str === s) {
-            s = "HELLO";
+    setTheState=()=>{
+        let s='hello'
+        if(this.state.str===s){
+            s='HELLO'
         }
-        this.setState({
-            str: s
-        });
+        this.setState({str:s})
     }
-  
-    forceItUpdate() {
-        this.forceUpdate();
+    forceItUpdate=()=>{
+        this.forceUpdate()
     }
-    render() {
-        alert("render");
+    render(){
+        alert('render')
         return(
             <div>
-                <span>{"Props:"}<h2>{parseInt(this.props.num,10)}</h2></span>
-                <br />
-                <span>{"State:"}<h2>{this.state.str}</h2></span>
+                <span>props:<h2>{parseInt(this.props.num,10)}</h2></span>
+                <br/>
+                <span>state:<h2>{this.state.str}</h2></span>
             </div>
-        );
+        )
     }
-  }
+}
+
 export default LifeCycle
